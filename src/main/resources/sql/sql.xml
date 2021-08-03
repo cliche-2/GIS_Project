@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="sql">
+	
+	<!--  cctv -->
+	<select id="cctvSelectInspurposeLike" resultType="com.geoserver.myapp.cctv.CctvDto">    
+		SELECT gid, la, lo, inspurpose, address FROM cctv WHERE inspurpose LIKE '%'|| #{val} ||'%';
+	</select>
+	
+	<select id="cctvSelectBothLike" resultType="com.geoserver.myapp.cctv.CctvDto">    
+		SELECT gid, la, lo, inspurpose, address FROM cctv WHERE (inspurpose like '%'|| #{detail} ||'%') AND (address ~  #{area} ) ;
+	</select>
+	
+	
+	
+	<!--  lamp -->
+	<select id="lampSelect" resultType="com.geoserver.myapp.lamp.LampDto">    
+		SELECT gid, la, lo, management, locationnumber FROM crmprvlmp WHERE la is not null;
+	</select>
+	<select id="lampSelectLikeArea" resultType="com.geoserver.myapp.lamp.LampDto">    
+		SELECT gid, la, lo, management, locationnumber FROM crmprvlmp WHERE (address ~  #{area} AND la is not null) ;
+	</select>
+	
+	
+	<!--  police -->
+	
+	<!-- WHERE column LIKE '%'||#{param}||'%'. -->
+	<select id="policeSelectInspurposeLike" resultType="com.geoserver.myapp.police.PoliceDto">    
+		SELECT gid, seo, inspurpose, x, y, address FROM police WHERE inspurpose LIKE '%'|| #{val} ||'%';
+	</select>
+	
+	<!--  !!!!!! -->
+	<!-- WHERE address ~ '.*(강남구|송파구).*' -->
+	<select id="policeSelectBothLike" resultType="com.geoserver.myapp.police.PoliceDto">    
+		SELECT gid, seo, inspurpose, x, y, address FROM police WHERE (inspurpose like '%'|| #{detail} ||'%') AND (address ~  #{area} ) ;
+	</select>
+	
+	
+	<!--  deprecated -->
+		<select id="policeSelectAll" resultType="com.geoserver.myapp.police.PoliceDto">    
+		SELECT gid, seo, inspurpose, x, y, address FROM police;
+		<!-- $ #{val}  where address = #{val}-->
+	</select>
+	
+	
+
+</mapper> 
