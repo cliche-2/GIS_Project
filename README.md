@@ -1,14 +1,26 @@
-## >GIS Mini Project
-2021.07.01-2021.08.03<br/><br/>
-Public data-based<br/>
-Facility Inquiry Web service<br/>
-using GeoServer and OpenLayers
-<br/><br/><br/>
-## >What I Used
-GeoServer<br/>
-OpenLayers<br/>
-PostgreSQL & PostGIS<br/>
-Apache Tomcat(Web)<br/>
-SBAdmin2(Bootstrap Theme)<br/>
+#  GIS Mini Project
+2021.07.01-2021.08.03<br/>
 
-<br/><br/><br/>
+Public data-based
+Facility Inquiry Web service
+using GeoServer and OpenLayers  
+<BR/>
+#  What I Used
+```
+GeoServer
+OpenLayers
+PostgreSQL & PostGIS
+Apache Tomcat(Web)
+SBAdmin2(Bootstrap Theme)
+```   
+   
+###  Developed
+```C
+Searching Items
+Showing Safe Area
+Back-end SpringFramework //Most of them are deprecated because they've been changed to use the WFS service
+ ```   
+###  Participated
+```C
+Design basic structure to use WMS and WFS services in Openlayers
+```
