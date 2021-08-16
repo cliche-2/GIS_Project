@@ -22,5 +22,5 @@ Back-end SpringFramework //Most of them are deprecated because they've been chan
  ```   
 ###  Participated
 ```C
-Design basic structure to use WMS and WFS services in Openlayers
+Design basic structure to use WMS and WFS services
 ```
